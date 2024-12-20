@@ -86,7 +86,7 @@
         username = "roman";
         modules = [
           nixos-wsl.nixosModules.wsl
-          ./wsl.nix
+          ./hosts/wsl.nix
         ];
       };
     };
