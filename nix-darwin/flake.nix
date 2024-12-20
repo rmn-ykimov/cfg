@@ -14,49 +14,6 @@
 
       nixpkgs.config.allowUnfree = true;
 
-      # List packages installed in system profile. To search by name, run:
-      # $ nix-env -qaP | grep wget
-      environment.systemPackages =
-        [ pkgs.neovim
-          pkgs.mkalias
-          pkgs.ffmpeg
-          
-          pkgs.git
-          pkgs.git-lfs
-          
-          pkgs.stow
-          pkgs.starship
-          pkgs.tmux
-          pkgs.rar
-          pkgs.ripgrep
-          pkgs.postgresql
-          
-          pkgs.docker
-          pkgs.docker-compose
-         
-          pkgs.python313
-          pkgs.python312
-          
-          pkgs.djvu2pdf
-         
-          pkgs.scons
-          pkgs.cmake
-         
-          pkgs.vulkan-tools
-          
-          pkgs.tree
-
-          pkgs.vscode
-          pkgs.google-chrome
-          pkgs.obsidian
-          pkgs.darktable
-          pkgs.dbeaver-bin
-          pkgs.zotero
-          pkgs.lmstudio
-          #pkgs.wireguard-tools
-          pkgs.utm
-        ];
-
         system.activationScripts.applications.text = let
           env = pkgs.buildEnv {
           name = "system-applications";
@@ -122,6 +79,7 @@
     # $ darwin-rebuild build --flake .#Romans-MacBook-Air
     darwinConfigurations."Romans-MacBook-Air" = nix-darwin.lib.darwinSystem {
       modules = [ 
+          ./modules/system-packages.nix
           configuration
           nix-homebrew.darwinModules.nix-homebrew
           {
