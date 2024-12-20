@@ -5,6 +5,7 @@
   inputs,
   ...
 }: {
+  
   # FIXME: change to your timezone! look it up with
   # "timedatectl list-timezones"
   time.timeZone = "America/Los_Angeles";
@@ -25,7 +26,6 @@
 
   users.users.${username} = {
     isNormalUser = true;
-    # FIXME: change your shell here if you don't want fish
     shell = pkgs.zsh;
     extraGroups = [
       "wheel"

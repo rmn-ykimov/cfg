@@ -2,6 +2,7 @@
   description = "NixOS configuration";
 
   inputs = {
+
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
@@ -33,7 +34,7 @@
         };
 
         overlays = [
-          nur.overlay
+          nur.overlays.default
 
           (_final: prev: {
             unstable = import nixpkgs-unstable {
@@ -82,7 +83,7 @@
 
       nixosConfigurations.nixos = mkNixosConfiguration {
         hostname = "nixos";
-        username = "roman"; # FIXME: replace with your own username!
+        username = "roman";
         modules = [
           nixos-wsl.nixosModules.wsl
           ./wsl.nix
