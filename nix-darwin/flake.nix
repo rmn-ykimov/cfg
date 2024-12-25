@@ -34,18 +34,6 @@
         done
             '';
 
-        homebrew = {
-          enable = true;
-          casks = [
-            "blender"
-            "vlc"
-            "godot-mono"
-          ];
-          onActivation.cleanup = "zap";
-          onActivation.autoUpdate = true;
-          onActivation.upgrade = true;
-        };
-
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
 
@@ -80,6 +68,7 @@
     darwinConfigurations."Romans-MacBook-Air" = nix-darwin.lib.darwinSystem {
       modules = [ 
           ./modules/system-packages.nix
+          ./modules/homebrew.nix
           configuration
           nix-homebrew.darwinModules.nix-homebrew
           {
