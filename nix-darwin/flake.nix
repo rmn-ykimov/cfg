@@ -57,9 +57,6 @@
       # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "aarch64-darwin";
 
-      system.defaults = {
-        dock.autohide = true;
-        };
     };
   in
   {
@@ -69,6 +66,7 @@
       modules = [ 
           ./modules/system-packages.nix
           ./modules/homebrew.nix
+          ./modules/system-defaults.nix
           configuration
           nix-homebrew.darwinModules.nix-homebrew
           {
