@@ -6,7 +6,9 @@
     neovim
     mkalias
     ffmpeg
-          
+    tree
+
+    # Version control      
     git
     git-lfs
           
@@ -17,25 +19,25 @@
     ripgrep
     postgresql
           
-    docker
+    # Docker
     docker-compose
          
+    # Python     
     python313
     python312
           
     djvu2pdf
-         
+    
+    # Build tools
     scons
     cmake
          
     vulkan-tools
           
-    tree
-
     vscode
     google-chrome
     obsidian
-    darktable
+    #darktable
     dbeaver-bin
     zotero
     lmstudio
