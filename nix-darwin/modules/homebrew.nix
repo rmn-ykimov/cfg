@@ -4,6 +4,7 @@
   homebrew = {
     enable = true;
     casks = [
+      "ghostty"
       "blender"
       "vlc"
       "godot-mono"
