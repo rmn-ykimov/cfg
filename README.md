@@ -34,7 +34,7 @@ nixos-rebuild switch --flake .#nixos-desktop
 For macOS, a separate configuration is used via nix-darwin. Apply it with the following command:
 
 ```shell
-darwin-rebuild build --flake .#Romans-MacBook-Air
+darwin-rebuild switch --flake .#Romans-MacBook-Air
 ```
 
 ---
