@@ -1,10 +1,13 @@
-# nix-config
-Personal nix config for nix-darwin and nixos.
+# cfg
+
+Flakes for nix-darwin and nixos plus dotfiles.
 
 ---
 
 ## Project Structure
 
+- `.zshrc` - zsh config
+- `.config/nvim` - configuration for nvim
 - `nixos/` - configurations for NixOS
 - `nix-darwin/` - configurations for macOS
 
@@ -32,4 +35,10 @@ For macOS, a separate configuration is used via nix-darwin. Apply it with the fo
 
 ```shell
 darwin-rebuild build --flake .#Romans-MacBook-Air
+```
+
+---
+
+```shell
+stow -t ~ .
 ```
