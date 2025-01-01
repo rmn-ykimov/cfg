@@ -7,6 +7,8 @@
     mkalias
     ffmpeg
     tree
+    unzip
+    gcc
 
     # Version control      
     git
@@ -25,6 +27,7 @@
     # Python     
     python313
     python312
+    uv
           
     djvu2pdf
     
@@ -32,17 +35,17 @@
     scons
     cmake
          
-    vulkan-tools
+    #vulkan-tools
           
     vscode
     google-chrome
     obsidian
     #darktable
-    dbeaver-bin
+    #dbeaver-bin
     zotero
-    lmstudio
+    #lmstudio
     wireguard-tools
-    utm
-    blockbench
+    #utm
+    #blockbench
   ];
 }
