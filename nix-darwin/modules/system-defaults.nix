@@ -2,6 +2,7 @@
 
 {
   system.defaults = {
+
     dock = {
         autohide = true;
         show-recents = false;
@@ -9,5 +10,14 @@
         orientation = "bottom";
         tilesize = 65;
       };
+
+    SoftwareUpdate = {
+      AutomaticallyInstallMacOSUpdates = true;
+      };
+    
+    magicmouse = {
+      MouseButtonMode = "OneButton";
+    };
+
   };
 }
