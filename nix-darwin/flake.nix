@@ -13,13 +13,12 @@
     darwinConfigurations."Romans-MacBook-Air" = nix-darwin.lib.darwinSystem {
       specialArgs = { inherit self; };
       modules = [ 
-          ./modules/system-packages.nix
-          ./modules/homebrew.nix
-          ./modules/system-defaults.nix
+          ./modules/packages/system-packages.nix
+          ./modules/packages/homebrew.nix
+          ./modules/system/system-defaults.nix
           ./modules/nix-settings.nix
-          ./modules/nixpkgs-settings.nix
-          ./modules/darwin-settings.nix
-          ./modules/applications-setup.nix
+          ./modules/system/darwin-settings.nix
+          ./modules/system/applications-setup.nix
           nix-homebrew.darwinModules.nix-homebrew
           {
             nix-homebrew = {

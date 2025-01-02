@@ -8,6 +8,4 @@
   # $ darwin-rebuild changelog
   system.stateVersion = 5;
 
-  # Enable alternative shell support in nix-darwin.
-  # programs.fish.enable = true;
 }

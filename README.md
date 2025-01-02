@@ -10,6 +10,14 @@ Flakes for nix-darwin and nixos plus dotfiles.
 - `.config/nvim` - configuration for nvim
 - `nixos/` - configurations for NixOS
 - `nix-darwin/` - configurations for macOS
+  - `modules/system/` - macOS system settings
+    - `darwin-settings.nix` - basic nix-darwin settings (system version, compatibility)
+    - `system-defaults.nix` - macOS preferences (dock, updates, mouse)
+    - `applications-setup.nix` - integration of Nix applications into macOS (/Applications)
+  - `nix-settings.nix` - Nix and nixpkgs configuration (experimental features, garbage collector, platform, unfree packages)
+  - `modules/packages/` - package management
+    - `system-packages.nix` - list of system packages to install via Nix
+    - `homebrew.nix` - package management through Homebrew
 
 ---
 
@@ -41,4 +49,3 @@ darwin-rebuild switch --flake .#Romans-MacBook-Air
 
 ```shell
 stow -t ~ .
-```
