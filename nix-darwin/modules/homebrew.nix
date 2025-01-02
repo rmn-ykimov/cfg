@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 
 {
+
   homebrew = {
     enable = true;
     casks = [
@@ -9,10 +10,12 @@
       "vlc"
       "godot-mono"
     ];
+
     onActivation = {
       cleanup = "zap";
       autoUpdate = true;
       upgrade = true;
     };
+    
   };
 }
