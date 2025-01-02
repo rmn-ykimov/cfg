@@ -10,6 +10,7 @@
     unzip
     gcc
     tree-sitter
+    lua
 
     # Version control      
     git
