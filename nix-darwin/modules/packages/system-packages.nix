@@ -9,6 +9,7 @@
     tree
     unzip
     gcc
+    tree-sitter
 
     # Version control      
     git
