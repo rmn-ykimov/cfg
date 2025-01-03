@@ -21,7 +21,9 @@
         expiration_symbol = "X";
         force_display = false;
       };
+
       aws.region_aliases = {};
+      
       aws.profile_aliases = {};
 
       azure = {
