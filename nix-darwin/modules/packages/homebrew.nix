@@ -7,8 +7,8 @@
     casks = [
       "ghostty"
       "vlc"
-      #"godot-mono"
-      #"blender"
+      "godot-mono"
+      "blender"
     ];
 
     onActivation = {

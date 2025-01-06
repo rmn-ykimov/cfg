@@ -12,33 +12,33 @@
     tree-sitter
     lua
 
-    # Version control      
+    # Version control
     git
     git-lfs
-          
+
     stow
     starship
     tmux
     rar
     ripgrep
     postgresql
-          
+
     # Docker
     docker-compose
-         
-    # Python     
+
+    # Python
     python313
     python312
     uv
-          
+
     djvu2pdf
-    
+
     # Build tools
     scons
     cmake
-         
+
     #vulkan-tools
-          
+
     vscode
     google-chrome
     obsidian
@@ -48,6 +48,5 @@
     #lmstudio
     wireguard-tools
     #utm
-    #blockbench
   ];
 }
