@@ -6,13 +6,10 @@
   ...
 }: {
   
-  # FIXME: change to your timezone! look it up with
-  # "timedatectl list-timezones"
   time.timeZone = "America/Los_Angeles";
 
   networking.hostName = "${hostname}";
 
-  # FIXME: change your shell here if you don't want fish
   programs.zsh.enable = true;
   environment.pathsToLink = ["/share/zsh"];
   environment.shells = [pkgs.zsh];
@@ -21,8 +18,7 @@
 
   security.sudo.wheelNeedsPassword = false;
 
-  # FIXME: uncomment the next line to enable SSH
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
 
   users.users.${username} = {
     isNormalUser = true;
@@ -56,14 +52,6 @@
     defaultUser = username;
     startMenuLaunchers = true;
 
-    # Enable integration with Docker Desktop (needs to be installed)
-    docker-desktop.enable = false;
-  };
-
-  virtualisation.docker = {
-    enable = true;
-    enableOnBoot = true;
-    autoPrune.enable = true;
   };
 
   nix = {
