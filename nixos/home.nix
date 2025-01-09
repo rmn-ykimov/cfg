@@ -18,6 +18,10 @@
     zip
     neovim
     nerd-fonts.jetbrains-mono
+    stow
+    gcc
+    cl
+    zig
   ];
 
   stable-packages = with pkgs; [
