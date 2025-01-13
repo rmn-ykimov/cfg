@@ -9,6 +9,10 @@
     curl
     git
     htop
+    fd
+    python313
+    lua
+    unzip
     ripgrep
     tmux
     tree
