@@ -11,6 +11,7 @@
     gcc
     tree-sitter
     lua
+    tldr
 
     # Version control
     git
