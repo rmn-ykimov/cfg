@@ -33,6 +33,7 @@
     
     # Shell
     zsh
+    nodejs_22
 
   ];
   
