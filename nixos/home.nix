@@ -26,11 +26,10 @@
     gcc
     cl
     zig
+    tree-sitter
   ];
 
   stable-packages = with pkgs; [
-    # FIXME: customize these stable packages to your liking for the languages
-    # that you use
     
     # Shell
     zsh
@@ -49,7 +48,6 @@ in {
     homeDirectory = "/home/${username}";
 
     sessionVariables.EDITOR = "nvim";
-    # FIXME: set your preferred $SHELL
     sessionVariables.SHELL = "/etc/profiles/per-user/${username}/bin/zsh";
   };
 
