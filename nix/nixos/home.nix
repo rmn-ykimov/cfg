@@ -4,37 +4,25 @@
   nix-index-database,
   ...
 }: let
+  shared = import ../shared/packages.nix { inherit pkgs; };
+  
   unstable-packages = with pkgs.unstable; [
     coreutils
     curl
-    git
     htop
     fd
-    python313
-    lua
-    unzip
-    ripgrep
-    tmux
-    tree
-    rar
     vim
     wget
     zip
-    neovim
     nerd-fonts.jetbrains-mono
-    stow
-    gcc
     cl
     zig
     nodejs_23
-    tree-sitter
   ];
 
   stable-packages = with pkgs; [
-    
     # Shell
     zsh
-
   ];
   
 in {
@@ -55,8 +43,9 @@ in {
   home.packages =
     stable-packages
     ++ unstable-packages
+    ++ shared.commonPackages
     ++
-    # FIXME: you can add anything else that doesn't fit into the above two lists in here
+    # FIXME: you can add anything else that doesn't fit into the above lists in here
     [
       # pkgs.some-package
       # pkgs.unstable.some-other-package
