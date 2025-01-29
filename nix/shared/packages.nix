@@ -13,7 +13,6 @@
     ## Languages and Compilers
     gcc
     python313
-    python312
     lua
     zig
     nodejs_23
