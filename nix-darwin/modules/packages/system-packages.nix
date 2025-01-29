@@ -49,5 +49,6 @@
     #lmstudio
     wireguard-tools
     #utm
+    blockbench
   ];
 }
