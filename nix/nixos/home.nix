@@ -7,22 +7,9 @@
   shared = import ../shared/packages.nix { inherit pkgs; };
   
   unstable-packages = with pkgs.unstable; [
-    coreutils
-    curl
-    htop
-    fd
-    vim
-    wget
-    zip
-    nerd-fonts.jetbrains-mono
-    cl
-    zig
-    nodejs_23
   ];
 
   stable-packages = with pkgs; [
-    # Shell
-    zsh
   ];
   
 in {

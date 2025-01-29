@@ -14,15 +14,9 @@ in
       
       # Additional tools
       ffmpeg
-      tldr
-      git-lfs
       postgresql
       docker-compose
-      python312
-      uv
       djvu2pdf
-      scons
-      cmake
 
       # GUI applications
       vscode
