@@ -79,7 +79,7 @@
       "/nix/var/nix/profiles/per-user/root/channels"
     ];
 
-    package = pkgs.nixFlakes;
+    # package = pkgs.nixFlakes;
     extraOptions = ''experimental-features = nix-command flakes'';
 
     gc = {

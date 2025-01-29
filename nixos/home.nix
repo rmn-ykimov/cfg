@@ -26,6 +26,7 @@
     gcc
     cl
     zig
+    nodejs_23
     tree-sitter
   ];
 
@@ -33,7 +34,6 @@
     
     # Shell
     zsh
-    nodejs_22
 
   ];
   
