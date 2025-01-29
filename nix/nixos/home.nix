@@ -16,6 +16,7 @@ in {
   imports = [
     nix-index-database.hmModules.nix-index
     ../shared/programs/starship.nix
+    ../shared/programs/zsh.nix
   ];
 
   home.stateVersion = "24.05";
@@ -57,14 +58,6 @@ in {
 
     direnv.enable = true;
     direnv.nix-direnv.enable = true;
-
-    zsh = {
-      enable = true;
-      autocd = true;
-      autosuggestion.enable = true;
-      enableCompletion = true;
-      syntaxHighlighting.enable = true;
-    };
 
     # git = {
     #   enable = true;

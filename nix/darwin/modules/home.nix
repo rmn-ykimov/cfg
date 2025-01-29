@@ -3,7 +3,7 @@
 {
 
   imports = [
-    ./home-modules/zsh.nix
+    ../../shared/programs/zsh.nix
     ../../shared/programs/starship.nix
   ];
   
