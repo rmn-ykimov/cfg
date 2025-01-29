@@ -15,6 +15,7 @@
 in {
   imports = [
     nix-index-database.hmModules.nix-index
+    ../shared/programs/starship.nix
   ];
 
   home.stateVersion = "24.05";
@@ -30,13 +31,7 @@ in {
   home.packages =
     stable-packages
     ++ unstable-packages
-    ++ shared.commonPackages
-    ++
-    # FIXME: you can add anything else that doesn't fit into the above lists in here
-    [
-      # pkgs.some-package
-      # pkgs.unstable.some-other-package
-    ];
+    ++ shared.commonPackages;
 
   programs = {
 
@@ -45,22 +40,6 @@ in {
     nix-index.enable = true;
     nix-index.enableZshIntegration = true;
     nix-index-database.comma.enable = true;
-
-    starship.enable = true; # https://gist.github.com/s-a-c/0e44dc7766922308924812d4c019b109#file-starship-nix
-    starship.settings = {
-      aws.disabled = true;
-      gcloud.disabled = true;
-      kubernetes.disabled = false;
-      git_branch.style = "242";
-      directory.style = "blue";
-      directory.truncate_to_repo = false;
-      directory.truncation_length = 8;
-      python.disabled = false;
-      ruby.disabled = true;
-      hostname.ssh_only = false;
-      hostname.style = "bold green";
-
-    };
 
     # FIXME: disable whatever you don't want
     fzf.enable = true;
@@ -118,7 +97,7 @@ in {
     #     diff = {
     #       colorMoved = "default";
     #     };
-    #   };
-    # };
+        #   };
+        # };
   };
 }

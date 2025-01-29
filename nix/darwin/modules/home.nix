@@ -4,7 +4,7 @@
 
   imports = [
     ./home-modules/zsh.nix
-    ./home-modules/starship.nix
+    ../../shared/programs/starship.nix
   ];
   
   home = {
