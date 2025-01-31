@@ -9,6 +9,7 @@
       "vlc"
       "godot-mono"
       "blender"
+      "dotnet-sdk"
     ];
 
     onActivation = {
