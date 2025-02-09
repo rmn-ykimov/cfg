@@ -10,6 +10,7 @@
       "godot-mono"
       "blender"
       "dotnet-sdk"
+      "jupyterlab"
     ];
 
     onActivation = {
