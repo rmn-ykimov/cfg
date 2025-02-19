@@ -4,7 +4,6 @@
     # Development
     ## Editors and IDEs
     neovim
-    vim
 
     ## Version Control
     git
@@ -14,6 +13,7 @@
     gcc
     python313
     lua
+    luajitPackages.luarocks
     zig
     nodejs_23
 
@@ -51,5 +51,8 @@
     ## Shell Utilities
     stow
     tldr
+
+    zoxide
+    broot
   ];
 }
