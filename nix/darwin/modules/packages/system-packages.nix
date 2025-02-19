@@ -12,12 +12,6 @@ in
       # macOS specific
       mkalias
       
-      # Additional tools
-      ffmpeg
-      postgresql
-      docker-compose
-      djvu2pdf
-
       # GUI applications
       vscode
       google-chrome

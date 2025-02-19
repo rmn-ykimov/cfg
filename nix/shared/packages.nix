@@ -54,5 +54,10 @@
 
     zoxide
     broot
+
+    ffmpeg
+    postgresql
+    docker-compose
+    djvu2pdf
   ];
 }
