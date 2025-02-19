@@ -5,6 +5,8 @@
   imports = [
     ../../shared/programs/zsh.nix
     ../../shared/programs/starship.nix
+    ../../shared/programs/broot.nix
+    ../../shared/programs/zoxide.nix
   ];
   
   home = {

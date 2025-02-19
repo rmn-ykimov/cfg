@@ -17,6 +17,8 @@ in {
     nix-index-database.hmModules.nix-index
     ../shared/programs/starship.nix
     ../shared/programs/zsh.nix
+    ../shared/programs/broot.nix
+    ../shared/programs/zoxide.nix
   ];
 
   home.stateVersion = "24.05";
@@ -48,13 +50,6 @@ in {
 
     lsd.enable = true;
     lsd.enableAliases = true;
-
-    zoxide.enable = true;
-    zoxide.enableZshIntegration = true;
-    zoxide.options = ["--cmd cd"];
-
-    broot.enable = true;
-    broot.enableZshIntegration = true;
 
     direnv.enable = true;
     direnv.nix-direnv.enable = true;
