@@ -59,5 +59,6 @@
     postgresql
     docker-compose
     djvu2pdf
+    imagemagick
   ];
 }
