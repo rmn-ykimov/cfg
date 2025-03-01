@@ -60,5 +60,7 @@
     docker-compose
     djvu2pdf
     imagemagick
+
+    nixos-generators
   ];
 }
