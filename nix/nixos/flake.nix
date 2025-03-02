@@ -81,6 +81,14 @@
     in {
       formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
 
+      nixosConfigurations.server = mkNixosConfiguration {
+        hostname = "server-digitalocean";
+        username = "root";
+        modules = [
+          ./hosts/server.nix
+        ];
+      };
+
       nixosConfigurations.nixos = mkNixosConfiguration {
         hostname = "nixos";
         username = "roman";
