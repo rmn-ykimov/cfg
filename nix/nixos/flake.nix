@@ -89,7 +89,7 @@
         ];
       };
 
-      nixosConfigurations.nixos = mkNixosConfiguration {
+      nixosConfigurations.wsl = mkNixosConfiguration {
         hostname = "nixos";
         username = "roman";
         modules = [
