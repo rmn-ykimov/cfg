@@ -61,6 +61,7 @@
     djvu2pdf
     imagemagick
 
-    nixos-generators
+    uv
+
   ];
 }
