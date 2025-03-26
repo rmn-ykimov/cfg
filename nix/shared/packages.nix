@@ -61,7 +61,5 @@
     djvu2pdf
     imagemagick
 
-    uv
-
   ];
 }
