@@ -7,9 +7,7 @@
     casks = [
       "ghostty"
       "vlc"
-      "godot-mono"
       "blender"
-      "dotnet-sdk"
       "jupyterlab"
     ];
 
