@@ -9,6 +9,7 @@
       "vlc"
       "blender"
       "jupyterlab"
+      "godot"
     ];
 
     onActivation = {
