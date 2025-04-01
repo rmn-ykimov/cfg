@@ -3,8 +3,7 @@
 
   inputs = {
 
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager.url = "github:nix-community/home-manager/release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -35,13 +34,6 @@
 
         overlays = [
           nur.overlays.default
-
-          (_final: prev: {
-            unstable = import nixpkgs-unstable {
-              inherit (prev) system;
-              inherit config;
-            };
-          })
         ];
       });
 
@@ -55,7 +47,7 @@
       argDefaults = {
         inherit secrets inputs self nix-index-database;
         channels = {
-          inherit nixpkgs nixpkgs-unstable;
+          inherit nixpkgs ;
         };
       };
 
@@ -81,15 +73,7 @@
     in {
       formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
 
-      nixosConfigurations.server = mkNixosConfiguration {
-        hostname = "server-digitalocean";
-        username = "root";
-        modules = [
-          ./hosts/server.nix
-        ];
-      };
-
-      nixosConfigurations.wsl = mkNixosConfiguration {
+      nixosConfigurations.nixos = mkNixosConfiguration {
         hostname = "nixos";
         username = "roman";
         modules = [
