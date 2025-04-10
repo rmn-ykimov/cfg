@@ -34,11 +34,14 @@
 
     ## System Monitoring
     htop
-    coreutils
+    uutils-coreutils
+    uutils-findutils
+    uutils-diffutils
 
     ## Network Tools
     curl
     wget
+    inetutils
 
     # Shell and Terminal
     ## Shell
