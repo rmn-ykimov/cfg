@@ -35,7 +35,7 @@
     ## System Monitoring
     htop
     uutils-coreutils
-    uutils-findutils
+    #uutils-findutils
     uutils-diffutils
 
     ## Network Tools
