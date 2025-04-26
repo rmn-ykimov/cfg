@@ -22,6 +22,7 @@
     uv
     scons
     cmake
+    gnumake
 
     # System Tools
     ## File Management
