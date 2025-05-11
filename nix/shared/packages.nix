@@ -15,7 +15,7 @@
     lua
     luajitPackages.luarocks
     zig
-    nodejs_23
+    nodejs_24
 
     ## Development Tools
     tree-sitter
@@ -64,6 +64,8 @@
     docker-compose
     djvu2pdf
     imagemagick
+
+    anki-bin
 
   ];
 }
