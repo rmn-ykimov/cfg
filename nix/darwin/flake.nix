@@ -42,6 +42,10 @@
             # arguments to home.nix
           }
 
+          {
+            system.primaryUser = "roman";
+          }
+
         ];
     };
   };

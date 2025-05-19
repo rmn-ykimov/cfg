@@ -23,6 +23,7 @@
     scons
     cmake
     gnumake
+    dotnetCorePackages.sdk_9_0-bin
 
     # System Tools
     ## File Management
