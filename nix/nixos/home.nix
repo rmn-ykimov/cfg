@@ -48,8 +48,8 @@ in {
     fzf.enable = true;
     fzf.enableZshIntegration = true;
 
-    lsd.enable = true;
-    lsd.enableAliases = true;
+    #lsd.enable = true;
+    #lsd.enableAliases = true;
 
     direnv.enable = true;
     direnv.nix-direnv.enable = true;
