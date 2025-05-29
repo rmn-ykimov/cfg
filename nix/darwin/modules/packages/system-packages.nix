@@ -17,7 +17,6 @@ in
       google-chrome
       obsidian
       zotero
-      wireguard-tools
       blockbench
     ]);
 }
