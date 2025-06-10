@@ -67,6 +67,7 @@
     imagemagick
 
     anki-bin
+    vscode
 
   ];
 }
