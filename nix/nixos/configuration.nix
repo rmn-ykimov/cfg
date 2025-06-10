@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:More actions
+{ config, pkgs, ... }:
 
 {
   imports =
