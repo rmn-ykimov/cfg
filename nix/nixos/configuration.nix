@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, ... }:More actions
 
 {
   imports =
@@ -11,7 +11,7 @@
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.useOSProber = true;
 
-  networking.hostName = "nixos";
+  networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -42,15 +42,9 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # Enable Hyprland (optimized for VirtualBox)
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
-
-  # SDDM display manager for Wayland
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
+  # Enable the GNOME Desktop Environment.
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -106,14 +100,6 @@
     # Системные пакеты, которые должны быть доступны глобально
     ghostty
     obsidian
-    
-    # Базовые Wayland утилиты
-    waybar          # статус бар
-    wofi           # лаунчер приложений
-    grim           # скриншоты
-    slurp          # выделение области для скриншотов
-    wl-clipboard   # буфер обмена для Wayland
-    nautilus       # файловый менеджер
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
