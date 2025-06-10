@@ -28,15 +28,15 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   i18n.extraLocaleSettings = {
-    LC_ADDRESS = "sr_ME";
-    LC_IDENTIFICATION = "sr_ME";
-    LC_MEASUREMENT = "sr_ME";
-    LC_MONETARY = "sr_ME";
-    LC_NAME = "sr_ME";
-    LC_NUMERIC = "sr_ME";
-    LC_PAPER = "sr_ME";
-    LC_TELEPHONE = "sr_ME";
-    LC_TIME = "sr_ME";
+    LC_ADDRESS = "en_US.UTF-8";
+    LC_IDENTIFICATION = "en_US.UTF-8";
+    LC_MEASUREMENT = "en_US.UTF-8";
+    LC_MONETARY = "en_US.UTF-8";
+    LC_NAME = "en_US.UTF-8";
+    LC_NUMERIC = "en_US.UTF-8";
+    LC_PAPER = "en_US.UTF-8";
+    LC_TELEPHONE = "en_US.UTF-8";
+    LC_TIME = "en_US.UTF-8";
   };
 
   # Enable the X11 windowing system.
@@ -128,5 +128,9 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05";
+
+  i18n.supportedLocales = [
+    "en_US.UTF-8/UTF-8"
+  ];
 
 }
