@@ -93,11 +93,9 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  neovim
-  curl
-  ghostty
-  git
-  obsidian
+    # Системные пакеты, которые должны быть доступны глобально
+    ghostty
+    obsidian
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
