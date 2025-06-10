@@ -12,7 +12,6 @@
         specialArgs = { inherit inputs; };
 
         modules = [
-            /etc/nixos/hardware-configuration.nix 
             ./configuration.nix
         ];
       };
