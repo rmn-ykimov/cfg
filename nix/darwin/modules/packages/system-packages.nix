@@ -17,6 +17,5 @@ in
       google-chrome
       obsidian
       zotero
-      blockbench
     ]);
 }
