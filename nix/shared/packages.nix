@@ -68,6 +68,7 @@
 
     anki-bin
     vscode
+    blender
 
   ];
 }

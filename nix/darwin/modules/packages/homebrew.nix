@@ -5,11 +5,12 @@
   homebrew = {
     enable = true;
     casks = [
+
       "ghostty"
-      "vlc"
-      "blender"
       "jupyterlab"
+      "vlc"
       "godot"
+
     ];
 
     onActivation = {
