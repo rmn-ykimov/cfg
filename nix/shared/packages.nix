@@ -57,6 +57,8 @@
     stow
     tldr
 
+    gopass
+
     zoxide
     broot
 
