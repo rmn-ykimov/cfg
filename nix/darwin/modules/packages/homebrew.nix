@@ -10,6 +10,7 @@
       "jupyterlab"
       "vlc"
       "godot"
+      "amneziavpn"
 
     ];
 
