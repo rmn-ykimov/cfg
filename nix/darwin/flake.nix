@@ -25,7 +25,6 @@
           {
             nix-homebrew = {
               enable = true;
-              # Apple Silicon Only
               enableRosetta = true;
               # User owning the Homebrew prefix
               user = "roman";

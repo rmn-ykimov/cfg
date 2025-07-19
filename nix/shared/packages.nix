@@ -71,6 +71,5 @@
     anki-bin
     vscode
     blender
-
   ];
 }

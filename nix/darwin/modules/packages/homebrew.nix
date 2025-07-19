@@ -11,6 +11,8 @@
       "vlc"
       "godot"
       "amneziavpn"
+      "darktable"
+      "gimp"
 
     ];
 
