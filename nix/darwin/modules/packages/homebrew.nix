@@ -10,7 +10,7 @@
       "jupyterlab"
       "vlc"
       "godot"
-      "amneziavpn"
+      #"amneziavpn"
       "darktable"
       "gimp"
 
