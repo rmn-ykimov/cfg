@@ -244,11 +244,11 @@
         "nur": "nur"
       },
       "locked": {
-        "path": "../shared",
+        "path": "../shared/inputs",
         "type": "path"
       },
       "original": {
-        "path": "../shared",
+        "path": "../shared/inputs",
         "type": "path"
       },
       "parent": []

@@ -1,7 +1,7 @@
 {
   description = "nix-darwin configuration";
 
-  inputs.shared.url = "path:../shared";
+  inputs.shared.url = "path:../shared/inputs";
 
   outputs = { self, shared, ... }:
   let
