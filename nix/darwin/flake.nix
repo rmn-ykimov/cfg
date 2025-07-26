@@ -1,17 +1,16 @@
 {
   description = "nix-darwin configuration";
 
-  inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/25.05";
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nix-darwin.url = "github:LnL7/nix-darwin/nix-darwin-25.05";
-    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
-    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
-    home-manager.url = "github:nix-community/home-manager/release-25.05";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
-  };
+  inputs.shared.url = "path:../shared";
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, nixpkgs-unstable, nix-homebrew, home-manager, ... }:
+  outputs = { self, shared, ... }:
+  let
+    nix-darwin = shared.inputs.nix-darwin;
+    nixpkgs = shared.inputs.nixpkgs;
+    nixpkgs-unstable = shared.inputs.nixpkgs-unstable;
+    nix-homebrew = shared.inputs.nix-homebrew;
+    home-manager = shared.inputs.home-manager;
+  in
   {
     darwinConfigurations."Romans-MacBook-Air" = nix-darwin.lib.darwinSystem {
       specialArgs = { 

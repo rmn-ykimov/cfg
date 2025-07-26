@@ -1,25 +1,17 @@
 {
   description = "NixOS configuration";
 
-  inputs = {
+  inputs.shared.url = "path:../shared";
 
-    nixpkgs.url = "github:NixOS/nixpkgs/25.05";
-    
-    home-manager.url = "github:nix-community/home-manager/release-25.05";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
-
-    nur.url = "github:nix-community/NUR";
-
-    nixos-wsl.url = "github:nix-community/NixOS-WSL";
-    nixos-wsl.inputs.nixpkgs.follows = "nixpkgs";
-
-    nix-index-database.url = "github:Mic92/nix-index-database";
-    nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
-
-  };
-
-  outputs = inputs:
-    with inputs; let
+  outputs = { self, shared, ... }:
+  let
+    nixpkgs = shared.inputs.nixpkgs;
+    home-manager = shared.inputs.home-manager;
+    nur = shared.inputs.nur;
+    nixos-wsl = shared.inputs.nixos-wsl;
+    nix-index-database = shared.inputs.nix-index-database;
+  in
+    with shared.inputs; let
       secrets = builtins.fromJSON (builtins.readFile "${self}/secrets.json");
 
       nixpkgsWithOverlays = system: (import nixpkgs rec {
@@ -45,7 +37,8 @@
       };
 
       argDefaults = {
-        inherit secrets inputs self nix-index-database;
+        inherit secrets self nix-index-database;
+        inputs = shared.inputs;
         channels = {
           inherit nixpkgs ;
         };

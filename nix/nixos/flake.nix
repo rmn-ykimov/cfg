@@ -1,13 +1,14 @@
 {
   description = "NixOS";
 
-  inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/25.05";
-    home-manager.url = "github:nix-community/home-manager/release-25.05";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
-  };
+  inputs.shared.url = "path:../shared";
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
+  outputs = { self, shared, ... }:
+  let
+    nixpkgs = shared.inputs.nixpkgs;
+    home-manager = shared.inputs.home-manager;
+  in
+  {
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
