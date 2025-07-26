@@ -1,30 +1,6 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-unstable ? pkgs, ... }:
 {
-  commonPackages = with pkgs; [
-    # Development
-    ## Editors and IDEs
-    neovim
-
-    ## Version Control
-    git
-    git-lfs
-
-    ## Languages and Compilers
-    gcc
-    python313
-    lua
-    luajitPackages.luarocks
-    zig
-    nodejs_24
-
-    ## Development Tools
-    tree-sitter
-    uv
-    scons
-    cmake
-    gnumake
-    dotnetCorePackages.sdk_9_0-bin
-
+  stablePackages = with pkgs; [
     # System Tools
     ## File Management
     tree
@@ -58,7 +34,6 @@
     tldr
 
     gopass
-
     zoxide
     broot
 
@@ -67,9 +42,35 @@
     docker-compose
     djvu2pdf
     imagemagick
+    blender
+  ];
+
+  unstablePackages = with pkgs-unstable; [
+    # Development
+    ## Editors and IDEs
+    neovim
+    vscode
+
+    ## Version Control
+    git
+    git-lfs
+
+    ## Languages and Compilers
+    gcc
+    python313
+    lua
+    luajitPackages.luarocks
+    zig
+    nodejs_24
+
+    ## Development Tools
+    tree-sitter
+    uv
+    scons
+    cmake
+    gnumake
+    dotnetCorePackages.sdk_9_0-bin
 
     anki-bin
-    vscode
-    blender
   ];
 }
