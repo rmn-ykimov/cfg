@@ -72,5 +72,6 @@
     dotnetCorePackages.sdk_9_0-bin
 
     anki-bin
+    zoom-us
   ];
 }
