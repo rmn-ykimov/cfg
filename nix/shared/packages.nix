@@ -51,6 +51,9 @@
     neovim
     vscode
 
+    ## Shells
+    nushell
+
     ## Version Control
     git
     git-lfs
