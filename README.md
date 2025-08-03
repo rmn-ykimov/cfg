@@ -27,22 +27,28 @@ To activate a specific configuration, use:
 
 ```shell
 # For WSL
-nixos-rebuild switch --flake .#nixos-wsl
+
+cd ~/cfg/nix/wsl/
+nixos-rebuild switch --flake .
 ```
 
 ```shell
 # For Desktop
-nixos-rebuild switch --flake .#nixos-desktop
+
+cd ~/cfg/nix/nixos/
+nixos-rebuild switch --flake .
 ```
 
 ---
 
 ## macOS Configuration
 
-For macOS, a separate configuration is used via nix-darwin. Apply it with the following command:
+For macOS, a separate configuration is used via nix-darwin. Apply it with the
+following commands:
 
 ```shell
-darwin-rebuild switch --flake .#Romans-MacBook-Air
+cd ~/cfg/nix/darwin/
+darwin-rebuild switch --flake .
 ```
 
 ---
