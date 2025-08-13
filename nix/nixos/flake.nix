@@ -3,7 +3,7 @@
 
   inputs.shared.url = "path:../shared/inputs";
 
-  outputs = { self, shared, ... }:
+  outputs = inputs@{ self, shared, ... }:
   let
     nixpkgs = shared.inputs.nixpkgs;
     home-manager = shared.inputs.home-manager;

@@ -15,7 +15,11 @@
   };
 
   # Добавляем shared пакеты
-  home.packages = (import ../shared/packages.nix { inherit pkgs; }).commonPackages;
+  home.packages =
+    let
+      p = import ../shared/packages.nix { inherit pkgs; };
+    in
+      p.stablePackages ++ p.unstablePackages;
 
   programs.home-manager.enable = true;
 }
