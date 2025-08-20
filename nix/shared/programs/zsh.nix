@@ -4,7 +4,7 @@
   programs.zsh = {
     enable = true;
     shellAliases = {
-      # ll = "ls -lah";
+      ll = "ls -lah";
       h = "history";
     };
     autosuggestion.enable = true;
