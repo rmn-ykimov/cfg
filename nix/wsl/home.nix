@@ -34,7 +34,8 @@ in {
   home.packages =
     stable-packages
     ++ unstable-packages
-    ++ shared.stablePackages;
+    ++ shared.stablePackages
+    ++ shared.unstablePackages;
 
   programs = {
 
