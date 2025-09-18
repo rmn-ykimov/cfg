@@ -14,7 +14,7 @@
   
 in {
   imports = [
-    nix-index-database.hmModules.nix-index
+    nix-index-database.homeModules.nix-index
     ../shared/programs/starship.nix
     ../shared/programs/zsh.nix
     ../shared/programs/broot.nix
@@ -34,7 +34,7 @@ in {
   home.packages =
     stable-packages
     ++ unstable-packages
-    ++ shared.commonPackages;
+    ++ shared.stablePackages;
 
   programs = {
 
