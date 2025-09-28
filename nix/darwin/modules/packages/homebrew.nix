@@ -7,7 +7,7 @@
     casks = [
 
       "ghostty"
-      "jupyterlab"
+      #"jupyterlab"
       "vlc"
       "godot"
       #"amneziavpn"

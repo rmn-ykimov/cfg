@@ -76,5 +76,7 @@
 
     anki-bin
     zoom-us
+
+    dbeaver-bin
   ];
 }
