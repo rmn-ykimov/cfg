@@ -43,6 +43,7 @@
     djvu2pdf
     imagemagick
     blender
+    steam
   ];
 
   unstablePackages = with pkgs-unstable; [
