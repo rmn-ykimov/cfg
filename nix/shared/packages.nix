@@ -42,7 +42,7 @@
     docker-compose
     djvu2pdf
     imagemagick
-    blender
+    #blender
   ];
 
   unstablePackages = with pkgs-unstable; [
