@@ -33,13 +33,13 @@
     stow
     tldr
 
-    gopass
+    #gopass
     zoxide
     broot
 
     ffmpeg
     postgresql
-    docker-compose
+    #docker-compose
     djvu2pdf
     imagemagick
     #blender
@@ -60,7 +60,7 @@
 
     ## Languages and Compilers
     gcc
-    python313
+    python314
     lua
     luajitPackages.luarocks
     zig
@@ -74,8 +74,8 @@
     gnumake
     dotnetCorePackages.sdk_9_0-bin
 
-    anki-bin
-    zoom-us
+    #anki-bin
+    #zoom-us
 
     dbeaver-bin
   ];
