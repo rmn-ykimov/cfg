@@ -65,6 +65,8 @@
     luajitPackages.luarocks
     zig
     nodejs_24
+    rustc
+    cargo
 
     ## Development Tools
     tree-sitter
