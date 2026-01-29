@@ -76,7 +76,7 @@
     cmake
     gnumake
     dotnetCorePackages.sdk_9_0-bin
-    jdk17_headless
+    jdk21_headless
 
     #anki-bin
     #zoom-us
