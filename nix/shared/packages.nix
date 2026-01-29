@@ -67,6 +67,7 @@
     nodejs_24
     rustc
     cargo
+    ruff
 
     ## Development Tools
     tree-sitter
