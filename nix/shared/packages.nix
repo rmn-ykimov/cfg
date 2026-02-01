@@ -33,6 +33,9 @@
     stow
     tldr
 
+    ## Shells
+    nushell
+
     #gopass
     zoxide
     broot
@@ -50,9 +53,6 @@
     ## Editors and IDEs
     neovim
     vscode
-
-    ## Shells
-    nushell
 
     ## Version Control
     git
