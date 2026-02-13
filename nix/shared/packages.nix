@@ -60,14 +60,26 @@
 
     ## Languages and Compilers
     gcc
+
+    markdownlint-cli
+
     python314
+    ruff
+
     lua
     luajitPackages.luarocks
+    stylua
+    lua-language-server
+    
     zig
+    
     nodejs_24
+
+    jdt-language-server
+    google-java-format
+    
     rustc
     cargo
-    ruff
 
     ## Development Tools
     tree-sitter
