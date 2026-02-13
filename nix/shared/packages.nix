@@ -44,11 +44,15 @@
     postgresql
     #docker-compose
     djvu2pdf
-    imagemagick
     #blender
   ];
 
   unstablePackages = with pkgs-unstable; [
+
+    pkg-config
+    imagemagick
+    luajit
+
     # Development
     ## Editors and IDEs
     neovim
