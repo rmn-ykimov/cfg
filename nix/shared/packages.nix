@@ -70,7 +70,6 @@
     python314
     ruff
 
-    lua
     luajitPackages.luarocks
     stylua
     lua-language-server
