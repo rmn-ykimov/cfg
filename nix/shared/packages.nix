@@ -51,12 +51,12 @@
 
     pkg-config
     imagemagick
-    luajit
 
     # Development
+    
     ## Editors and IDEs
     neovim
-    vscode
+    #vscode
 
     ## Version Control
     git
@@ -67,20 +67,27 @@
 
     markdownlint-cli
 
+    ### Python
     python314
     ruff
 
+    ### Lua
+    luajit
     luajitPackages.luarocks
     stylua
     lua-language-server
     
+    ### Zig
     zig
     
+    ### NodeJS
     nodejs_24
 
+    ### Java
     jdt-language-server
     google-java-format
     
+    ### Rust
     rustc
     cargo
 
