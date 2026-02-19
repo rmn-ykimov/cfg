@@ -84,12 +84,17 @@
     nodejs_24
 
     ### Java
+    jdk21_headless
     jdt-language-server
     google-java-format
     
     ### Rust
     rustc
     cargo
+
+    ### Nix
+    nixfmt
+    nixd
 
     ## Development Tools
     tree-sitter
@@ -98,7 +103,6 @@
     cmake
     gnumake
     dotnetCorePackages.sdk_9_0-bin
-    jdk21_headless
 
     #anki-bin
     #zoom-us
