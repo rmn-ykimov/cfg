@@ -7,7 +7,7 @@
     ../shared/programs/broot.nix
     ../shared/programs/zoxide.nix
   ];
-  
+
   home = {
     stateVersion = "25.05";
     username = "roman";
@@ -19,7 +19,7 @@
     let
       p = import ../shared/packages.nix { inherit pkgs; };
     in
-      p.stablePackages ++ p.unstablePackages;
+    p.stablePackages ++ p.unstablePackages;
 
   programs.home-manager.enable = true;
 }
