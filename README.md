@@ -1,6 +1,7 @@
 # cfg
 
-Flakes for nix-darwin and nixos plus dotfiles.
+Flakes for nix-darwin and nixos plus dotfiles and NeoVim configuration, based on kickstart.nvim.
+
 
 ---
 
