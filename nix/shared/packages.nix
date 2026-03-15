@@ -1,4 +1,8 @@
-{ pkgs, pkgs-unstable ? pkgs, ... }:
+{
+  pkgs,
+  pkgs-unstable ? pkgs,
+  ...
+}:
 {
   stablePackages = with pkgs; [
     # System Tools
@@ -53,7 +57,7 @@
     imagemagick
 
     # Development
-    
+
     ## Editors and IDEs
     neovim
     #vscode
@@ -76,10 +80,10 @@
     luajitPackages.luarocks
     stylua
     lua-language-server
-    
+
     ### Zig
     zig
-    
+
     ### NodeJS
     nodejs_24
 
@@ -87,7 +91,7 @@
     jdk21_headless
     jdt-language-server
     google-java-format
-    
+
     ### Rust
     rustc
     cargo
@@ -106,7 +110,6 @@
 
     #anki-bin
     #zoom-us
-
-    dbeaver-bin
+    #dbeaver-bin
   ];
 }

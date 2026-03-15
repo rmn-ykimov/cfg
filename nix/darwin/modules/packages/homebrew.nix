@@ -21,6 +21,6 @@
       autoUpdate = true;
       upgrade = true;
     };
-    
+
   };
 }
