@@ -46,7 +46,7 @@
 
     ffmpeg
     postgresql
-    #docker-compose
+    docker-compose
     djvu2pdf
     #blender
   ];
@@ -111,5 +111,6 @@
     #anki-bin
     #zoom-us
     #dbeaver-bin
+    #minikube
   ];
 }
