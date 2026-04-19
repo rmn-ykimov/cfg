@@ -38,7 +38,7 @@
     tldr
 
     ## Shells
-    nushell
+    #nushell
 
     #gopass
     zoxide
