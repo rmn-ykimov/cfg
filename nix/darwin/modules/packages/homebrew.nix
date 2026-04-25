@@ -12,7 +12,7 @@
       "godot"
       #"amneziavpn"
       "darktable"
-      "gimp"
+      #"gimp"
 
     ];
 
