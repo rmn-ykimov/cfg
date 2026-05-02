@@ -107,6 +107,7 @@
     cmake
     gnumake
     dotnetCorePackages.sdk_9_0-bin
+    claude-code
 
     #anki-bin
     #zoom-us
