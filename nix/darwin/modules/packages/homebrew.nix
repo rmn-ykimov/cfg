@@ -13,6 +13,9 @@
       #"amneziavpn"
       "darktable"
       #"gimp"
+      "google-chrome"
+      "obsidian"
+      "zotero"
 
     ];
 

@@ -13,9 +13,6 @@ in
       # macOS specific
       mkalias
       
-      # GUI applications
-      google-chrome
-      obsidian
-      zotero
+      # GUI applications (moved to Homebrew casks in homebrew.nix)
     ]);
 }
