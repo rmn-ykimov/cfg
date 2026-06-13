@@ -1,5 +1,5 @@
 {
-description = "Common dependencies for all configurations";
+  description = "Common dependencies for all configurations";
 
   inputs = {
     # Common inputs
@@ -22,7 +22,9 @@ description = "Common dependencies for all configurations";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, ... }@inputs: {
-    inherit inputs;
-  };
+  outputs =
+    { self, ... }@inputs:
+    {
+      inherit inputs;
+    };
 }

@@ -8,9 +8,9 @@
     ../../shared/programs/broot.nix
     ../../shared/programs/zoxide.nix
   ];
-  
+
   home = {
-    stateVersion = "25.05";
+    stateVersion = "26.11";
     username = "roman";
     homeDirectory = pkgs.lib.mkForce "/Users/roman";
   };
