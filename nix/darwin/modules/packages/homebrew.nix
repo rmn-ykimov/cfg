@@ -9,7 +9,7 @@
       "ghostty"
       #"jupyterlab"
       "vlc"
-      "godot"
+      "godot-mono"
       #"amneziavpn"
       "darktable"
       #"gimp"
