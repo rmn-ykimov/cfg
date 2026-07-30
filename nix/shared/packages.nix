@@ -55,6 +55,7 @@
 
     pkg-config
     imagemagick
+    tailscale
 
     # Development
 
@@ -88,9 +89,9 @@
     nodejs_24
 
     ### Java
-    jdk21_headless
-    jdt-language-server
-    google-java-format
+    #jdk21_headless
+    #jdt-language-server
+    #google-java-format
 
     ### Rust
     rustc
@@ -106,7 +107,7 @@
     scons
     cmake
     gnumake
-    dotnetCorePackages.sdk_9_0-bin
+    #dotnetCorePackages.sdk_9_0-bin
     #claude-code
 
     #anki-bin

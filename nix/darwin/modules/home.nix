@@ -16,4 +16,7 @@
   };
 
   programs.home-manager.enable = true;
+
+  # Hermes CLI lives in ~/.local/bin
+  home.sessionPath = [ "$HOME/.local/bin" ];
 }
