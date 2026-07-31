@@ -8,14 +8,15 @@
 
       "ghostty"
       #"jupyterlab"
-      "vlc"
-      "godot-mono"
+      #"vlc"
+      #"godot-mono"
       #"amneziavpn"
-      "darktable"
+      #"darktable"
       #"gimp"
       "google-chrome"
       "obsidian"
       "zotero"
+      #"tailscale"
 
     ];
 

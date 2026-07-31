@@ -55,7 +55,6 @@
 
     pkg-config
     imagemagick
-    tailscale
 
     # Development
 
