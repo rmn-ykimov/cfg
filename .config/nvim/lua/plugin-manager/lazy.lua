@@ -41,7 +41,6 @@ local function get_plugins()
 		require("plugins.gitsigns"),
 		require("plugins.oil"),
 		require("plugins.obsidian"),
-		require("plugins.codesnap"),
 		require("plugins.neogit"),
 		require("plugins.image_nvim"),
 		require("plugins.nvim_java")
