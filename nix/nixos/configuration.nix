@@ -95,8 +95,7 @@
   # Enable zsh system-wide
   programs.zsh.enable = true;
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  home-manager.users.roman = import ./home.nix;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -132,13 +131,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05";
-
-  nix = {
-    settings.experimental-features = [ "nix-command" "flakes" ];
-    optimise.automatic = true;
-    gc = {
-      automatic = true;
-      options = "--delete-older-than 7d";
-    };
-  };
 }

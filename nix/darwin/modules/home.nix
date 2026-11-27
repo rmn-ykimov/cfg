@@ -1,21 +1,9 @@
-{ config, pkgs, ... }:
+{ ... }:
 
 {
+  imports = [ ../../shared/home.nix ];
 
-  imports = [
-    ../../shared/programs/zsh.nix
-    ../../shared/programs/starship.nix
-    ../../shared/programs/broot.nix
-    ../../shared/programs/zoxide.nix
-  ];
-
-  home = {
-    stateVersion = "26.11";
-    username = "roman";
-    homeDirectory = pkgs.lib.mkForce "/Users/roman";
-  };
-
-  programs.home-manager.enable = true;
+  home.stateVersion = "26.11";
 
   # Hermes CLI lives in ~/.local/bin
   home.sessionPath = [ "$HOME/.local/bin" ];

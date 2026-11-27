@@ -1,14 +1,11 @@
-# List packages installed in system profile. To search by name, run:
-# $ nix-env -qaP | grep wget  
+# macOS-only system packages; the shared list comes through Home Manager
+# (nix/shared/home.nix), like on the other hosts.
 { pkgs, ... }:
 
 {
-  environment.systemPackages =
-    import ../../../shared/packages.nix { inherit pkgs; }
-    ++ (with pkgs; [
-      # macOS specific
-      mkalias
+  environment.systemPackages = with pkgs; [
+    mkalias
 
-      # GUI applications (moved to Homebrew casks in homebrew.nix)
-    ]);
+    # GUI applications (moved to Homebrew casks in homebrew.nix)
+  ];
 }

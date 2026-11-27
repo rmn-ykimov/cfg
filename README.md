@@ -1,20 +1,24 @@
 # cfg
 
-Nix flakes for macOS (nix-darwin), a NixOS desktop and NixOS-WSL, plus a
-Neovim configuration based on kickstart.nvim.
+Nix configuration for three hosts in one flake: macOS (nix-darwin), a NixOS
+desktop and NixOS-WSL, plus a Neovim configuration based on kickstart.nvim.
 
 ## Layout
 
 ```text
+flake.nix              inputs and the three hosts: wsl, desktop, mac
+flake.lock             one lock for all hosts
 .config/nvim/          Neovim config (lazy.nvim, one file per plugin in lua/plugins/)
 nix/
   shared/
-    inputs/flake.nix   inputs used by every host (nixpkgs, home-manager, ...)
+    nix.nix            Nix settings for every host (flakes, store optimisation, gc)
+    home.nix           Home Manager base for every host: programs, packages
     packages.nix       package list installed on every host
-    programs/          Home Manager modules for every host: zsh, starship, broot, zoxide
+    programs/          zsh, starship, broot, zoxide
   darwin/              macOS (nix-darwin + Home Manager + nix-homebrew)
+    default.nix        host entry point
     modules/system/    macOS defaults, nix-darwin settings, /Applications links
-    modules/packages/  system packages and Homebrew casks
+    modules/packages/  macOS packages and Homebrew casks
   nixos/               NixOS desktop (GNOME)
   wsl/                 NixOS-WSL
     hosts/wsl.nix      host settings, user, services
@@ -23,23 +27,26 @@ nix/
     hosts/postgresql.nix
 ```
 
-Each host directory is its own flake with its own `flake.lock`.
-
 ## Apply
 
 ```shell
 # macOS
-cd ~/cfg/nix/darwin && darwin-rebuild switch --flake .
+darwin-rebuild switch --flake ~/cfg#mac
 
 # NixOS desktop
-cd ~/cfg/nix/nixos && sudo nixos-rebuild switch --flake .
+sudo nixos-rebuild switch --flake ~/cfg#desktop
 
 # NixOS-WSL (reads a root CA kept outside the repo, hence --impure)
-cd ~/cfg/nix/wsl && sudo nixos-rebuild switch --impure --flake .#nixos
+sudo nixos-rebuild switch --impure --flake ~/cfg#wsl
 ```
 
 The WSL host expects the CA at `/etc/nixos/extra-ca/root-ca.pem` (root-owned);
 without it the build stops with a message saying so.
+
+## Update
+
+`nix flake update` in `~/cfg` moves every host to the same new versions;
+then switch each host.
 
 ## Neovim
 

@@ -1,6 +1,5 @@
 {
   username,
-  hostname,
   pkgs,
   ...
 }:
@@ -11,6 +10,8 @@
     ./postgresql.nix
   ];
 
+  nixpkgs.hostPlatform = "x86_64-linux";
+
   wsl = {
     enable = true;
     defaultUser = username;
@@ -20,7 +21,7 @@
     wslConf.network.generateHosts = false;
   };
 
-  networking.hostName = hostname;
+  networking.hostName = "nixos";
   time.timeZone = "Europe/Budapest";
 
   users.users.${username} = {
@@ -58,15 +59,6 @@
   # WebDriverManager downloads chromedriver for this Chrome; it runs via nix-ld.
   environment.systemPackages = [ pkgs.google-chrome ];
   environment.variables.JAVA_HOME = "${pkgs.temurin-bin-25}";
-
-  nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
-    auto-optimise-store = true;
-  };
-  nix.gc = {
-    automatic = true;
-    options = "--delete-older-than 7d";
-  };
 
   # Release of the first install (NixOS-WSL 2605.7.2); do not change.
   system.stateVersion = "26.05";

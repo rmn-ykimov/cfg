@@ -1,4 +1,6 @@
 ^/nix
+^/flake\.nix
+^/flake\.lock
 
 \.lock$
 
