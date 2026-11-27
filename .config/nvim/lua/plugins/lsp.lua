@@ -1,7 +1,7 @@
 -- https://github.com/folke/lazydev.nvim
 -- https://github.com/neovim/nvim-lspconfig
 -- https://github.com/Bilal2453/luvit-meta
--- https://github.com/hrsh7th/cmp-nvim-lsp
+-- https://github.com/saghen/blink.cmp (completion capabilities)
 
 return {
 	{
@@ -25,8 +25,8 @@ return {
 			-- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
 			{ "j-hui/fidget.nvim", opts = {} },
 
-			-- Allows extra capabilities provided by nvim-cmp
-			"hrsh7th/cmp-nvim-lsp",
+			-- Completion capabilities that blink.cmp adds for the servers
+			"saghen/blink.cmp",
 		},
 		config = function()
 			-- Brief aside: **What is LSP?**
@@ -166,10 +166,10 @@ return {
 
 			-- LSP servers and clients are able to communicate to each other what features they support.
 			--  By default, Neovim doesn't support everything that is in the LSP specification.
-			--  When you add nvim-cmp, luasnip, etc. Neovim now has *more* capabilities.
-			--  So, we create new capabilities with nvim cmp, and then broadcast that to the servers.
+			--  The completion plugin (blink.cmp) supports more than Neovim alone,
+			--  so we add its capabilities and broadcast them to the servers.
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
-			capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
+			capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
 
 			-- Enable the following language servers
 			--  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
