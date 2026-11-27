@@ -44,7 +44,7 @@ return {
 				":Telescope git_branches<CR>",
 				{ silent = true, noremap = true, desc = "Telescope git branches" }
 			)
-			vim.keymap.set("n", "<leader>gB", ":G blame<CR>", { silent = true, noremap = true, desc = "Git blame" })
+			vim.keymap.set("n", "<leader>gB", "<cmd>Gitsigns blame<CR>", { silent = true, noremap = true, desc = "Git blame (whole file)" })
 		end,
 	},
 }
