@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
-  # Prebuilt Linux binaries: Hermes pm tools (Python, Node, Chrome for Testing,
-  # cua-driver), gbrain release binary, Selenium Chrome.
+  # Libraries for prebuilt binaries: Hermes tools (Python, Node, Chrome for
+  # Testing, cua-driver), the gbrain binary, Chrome for Selenium.
   programs.nix-ld = {
     enable = true;
     libraries = with pkgs; [
@@ -15,8 +15,7 @@
       libffi
       util-linux
       systemd
-
-      # Chrome / Electron / cua-driver
+      # Chrome / Electron
       glib
       nss
       nspr
