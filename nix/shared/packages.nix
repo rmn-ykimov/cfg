@@ -2,113 +2,112 @@
 # Packages installed on every host (one nixpkgs, nixos-unstable).
 with pkgs;
 [
-    # System Tools
-    ## File Management
-    tree
-    unzip
-    rar
-    zip
-    fd
-    ripgrep
+  # System Tools
+  ## File Management
+  tree
+  unzip
+  rar
+  zip
+  fd
+  ripgrep
 
-    ## System Monitoring
-    htop
-    uutils-coreutils
-    #uutils-findutils
-    uutils-diffutils
+  ## System Monitoring
+  htop
+  uutils-coreutils
+  #uutils-findutils
+  uutils-diffutils
 
-    ## Network Tools
-    curl
-    wget
-    inetutils
+  ## Network Tools
+  curl
+  wget
+  inetutils
 
-    # Shell and Terminal
-    ## Shell
-    zsh
-    starship
+  # Shell and Terminal
+  ## Shell
+  zsh
+  starship
 
-    ## Terminal Multiplexer
-    tmux
+  ## Terminal Multiplexer
+  tmux
 
-    ## Shell Utilities
-    stow
-    tldr
+  ## Shell Utilities
+  tldr
 
-    ## Shells
-    #nushell
+  ## Shells
+  #nushell
 
-    #gopass
-    zoxide
-    broot
+  #gopass
+  zoxide
+  broot
 
-    ffmpeg
-    postgresql
-    docker-compose
-    # djvu2pdf was removed from nixpkgs (unmaintained); ddjvu -format=pdf does the same
-    djvulibre
-    #blender
+  ffmpeg
+  postgresql
+  docker-compose
+  # djvu2pdf was removed from nixpkgs (unmaintained); ddjvu -format=pdf does the same
+  djvulibre
+  #blender
 
-    pkg-config
-    imagemagick
+  pkg-config
+  imagemagick
 
-    # Development
+  # Development
 
-    ## Editors and IDEs
-    neovim
-    #vscode
+  ## Editors and IDEs
+  neovim
+  #vscode
 
-    ## Version Control
-    git
-    git-lfs
+  ## Version Control
+  git
+  git-lfs
 
-    ## Languages and Compilers
-    gcc
+  ## Languages and Compilers
+  gcc
 
-    markdownlint-cli
+  markdownlint-cli
 
-    ### Python
-    python314
-    ruff
+  ### Python
+  python314
+  ruff
 
-    ### Lua
-    luajit
-    luajitPackages.luarocks
-    stylua
-    lua-language-server
+  ### Lua
+  luajit
+  luajitPackages.luarocks
+  stylua
+  lua-language-server
 
-    ### Zig
-    zig
+  ### Zig
+  zig
 
-    ### NodeJS
-    nodejs_24
+  ### NodeJS
+  nodejs_24
 
-    ### Java
-    temurin-bin-25
-    (maven.override { jdk_headless = temurin-bin-25; })
-    jdt-language-server
-    # Run it on the same JDK 25 jdt-language-server uses instead of pulling
-    # a separate ~0.9 GB JDK 21.
-    (google-java-format.override { jre = jdk25; })
+  ### Java
+  temurin-bin-25
+  (maven.override { jdk_headless = temurin-bin-25; })
+  jdt-language-server
+  # Run it on the same JDK 25 jdt-language-server uses instead of pulling
+  # a separate ~0.9 GB JDK 21.
+  (google-java-format.override { jre = jdk25; })
 
-    ### Rust
-    rustc
-    cargo
+  ### Rust
+  rustc
+  cargo
 
-    ### Nix
-    nixfmt
-    nixd
+  ### Nix
+  nixfmt
+  nixd
 
-    ## Development Tools
-    tree-sitter
-    uv
-    scons
-    cmake
-    gnumake
-    dotnetCorePackages.sdk_9_0-bin
-    #claude-code
+  ## Development Tools
+  tree-sitter
+  uv
+  scons
+  cmake
+  gnumake
+  dotnetCorePackages.sdk_9_0-bin
+  #claude-code
 
-    #anki-bin
-    #zoom-us
-    #dbeaver-bin
-    #minikube
+  #anki-bin
+  #zoom-us
+  #dbeaver-bin
+  #minikube
 ]

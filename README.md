@@ -46,16 +46,12 @@ without it the build stops with a message saying so.
 ## Update
 
 `nix flake update` in `~/cfg` moves every host to the same new versions;
-then switch each host.
+then switch each host. `nix fmt` formats every `.nix` file.
 
 ## Neovim
 
-Link the config into `~/.config` with GNU Stow (`.stow-local-ignore` keeps
-`nix/` and repo files out):
-
-```shell
-cd ~/cfg && stow -t ~ .
-```
+Home Manager links `~/.config/nvim` to `~/cfg/.config/nvim` on switch, so the
+repo must live at `~/cfg`; edits to the nvim config apply without a rebuild.
 
 Plugins install on first start. Treesitter parsers are listed in
 `lua/plugins/treesitter.lua`; add a language there to get highlighting for it.

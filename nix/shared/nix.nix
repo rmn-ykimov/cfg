@@ -2,7 +2,10 @@
 { ... }:
 {
   nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
     # Hard-link identical files on every build.
     auto-optimise-store = true;
   };

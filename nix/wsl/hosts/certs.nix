@@ -29,7 +29,8 @@ in
   ];
 
   # Prebuilt Python (Hermes, uv) looks for /etc/ssl/cert.pem.
-  environment.etc."ssl/cert.pem".source = config.environment.etc."ssl/certs/ca-certificates.crt".source;
+  environment.etc."ssl/cert.pem".source =
+    config.environment.etc."ssl/certs/ca-certificates.crt".source;
 
   # Node, Python requests and uv ignore the system store; user services do
   # not read shell variables, so they get the same values from systemd.

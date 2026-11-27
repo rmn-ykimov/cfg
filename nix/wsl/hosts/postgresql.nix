@@ -1,4 +1,9 @@
-{ pkgs, lib, username, ... }:
+{
+  pkgs,
+  lib,
+  username,
+  ...
+}:
 {
   # Database for Hindsight and gbrain. Port 5434 is what their configs use;
   # always write the port: WSL distros share one network.
@@ -9,14 +14,23 @@
     settings.port = 5434;
     enableTCPIP = false; # loopback only
 
-    ensureDatabases = [ "hindsight" "gbrain" ];
+    ensureDatabases = [
+      "hindsight"
+      "gbrain"
+    ];
     ensureUsers = [
-      { name = "hindsight"; ensureDBOwnership = true; }
+      {
+        name = "hindsight";
+        ensureDBOwnership = true;
+      }
       {
         name = "gbrain";
         ensureDBOwnership = true;
         # gbrain migrations create event triggers and enable RLS.
-        ensureClauses = { superuser = true; bypassrls = true; };
+        ensureClauses = {
+          superuser = true;
+          bypassrls = true;
+        };
       }
     ];
 

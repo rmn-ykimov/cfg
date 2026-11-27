@@ -53,6 +53,11 @@
         };
     in
     {
+      # `nix fmt` formats every .nix file in the repo with nixfmt
+      formatter = nixpkgs.lib.genAttrs [ "x86_64-linux" "aarch64-darwin" ] (
+        system: nixpkgs.legacyPackages.${system}.nixfmt-tree
+      );
+
       # sudo nixos-rebuild switch --impure --flake ~/cfg#wsl
       nixosConfigurations.wsl = nixos [
         nixos-wsl.nixosModules.wsl
