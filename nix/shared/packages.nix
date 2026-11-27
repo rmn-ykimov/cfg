@@ -68,6 +68,7 @@ with pkgs;
   ### Python
   python314
   ruff
+  pyright
 
   ### Lua
   luajit
