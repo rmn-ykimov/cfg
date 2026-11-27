@@ -86,6 +86,7 @@ with pkgs;
   temurin-bin-25
   (maven.override { jdk_headless = temurin-bin-25; })
   jdt-language-server
+  lemminx # XML language server (pom.xml, testng.xml)
   # Run it on the same JDK 25 jdt-language-server uses instead of pulling
   # a separate ~0.9 GB JDK 21.
   (google-java-format.override { jre = jdk25; })

@@ -184,6 +184,8 @@ return {
 				-- clangd = {},
 				-- gopls = {},
 				pyright = {},
+				-- XML: pom.xml, testng.xml (tags and validation from the file's XSD)
+				lemminx = {},
 				-- rust_analyzer = {},
 				nixd = {
 					settings = {
