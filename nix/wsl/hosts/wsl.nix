@@ -57,7 +57,7 @@
   # JDK, Maven and Java tools come from shared/packages.nix. Selenium:
   # WebDriverManager downloads chromedriver for this Chrome; it runs via nix-ld.
   environment.systemPackages = [ pkgs.google-chrome ];
-  environment.variables.JAVA_HOME = "${pkgs.temurin-bin-17}";
+  environment.variables.JAVA_HOME = "${pkgs.temurin-bin-25}";
 
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];

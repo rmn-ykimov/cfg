@@ -89,8 +89,8 @@
     nodejs_24
 
     ### Java
-    temurin-bin-17
-    (maven.override { jdk_headless = temurin-bin-17; })
+    temurin-bin-25
+    (maven.override { jdk_headless = temurin-bin-25; })
     jdt-language-server
     # Run it on the same JDK 25 jdt-language-server uses instead of pulling
     # a separate ~0.9 GB JDK 21.

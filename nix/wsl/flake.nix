@@ -30,7 +30,7 @@
         # from shared/packages.nix gets the extra CA here.
         overlays = [
           (final: prev: {
-            temurin-bin-17 = prev.temurin-bin-17.override {
+            temurin-bin-25 = prev.temurin-bin-25.override {
               cacert = prev.cacert.override { extraCertificateFiles = [ extraCa ]; };
             };
           })
