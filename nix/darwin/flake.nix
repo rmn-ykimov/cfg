@@ -7,18 +7,13 @@
   let
     nix-darwin = shared.inputs.nix-darwin;
     nixpkgs = shared.inputs.nixpkgs;
-    nixpkgs-unstable = shared.inputs.nixpkgs-unstable;
     nix-homebrew = shared.inputs.nix-homebrew;
     home-manager = shared.inputs.home-manager;
   in
   {
     darwinConfigurations."Romans-MacBook-Air" = nix-darwin.lib.darwinSystem {
-      specialArgs = { 
+      specialArgs = {
         inherit self;
-        pkgs-unstable = import nixpkgs-unstable {
-          system = "aarch64-darwin";
-          config.allowUnfree = true;
-        };
       };
       modules = [ 
           ./modules/packages/system-packages.nix

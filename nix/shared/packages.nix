@@ -1,10 +1,7 @@
-{
-  pkgs,
-  pkgs-unstable ? pkgs,
-  ...
-}:
-{
-  stablePackages = with pkgs; [
+{ pkgs, ... }:
+# Packages installed on every host (one nixpkgs, nixos-unstable).
+with pkgs;
+[
     # System Tools
     ## File Management
     tree
@@ -50,9 +47,6 @@
     # djvu2pdf was removed from nixpkgs (unmaintained); ddjvu -format=pdf does the same
     djvulibre
     #blender
-  ];
-
-  unstablePackages = with pkgs-unstable; [
 
     pkg-config
     imagemagick
@@ -117,5 +111,4 @@
     #zoom-us
     #dbeaver-bin
     #minikube
-  ];
-}
+]

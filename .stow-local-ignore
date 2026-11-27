@@ -1,6 +1,4 @@
 ^/nix
-^/nix-darwin
-^/nixos
 
 \.lock$
 
@@ -8,18 +6,14 @@
 \.gitignore
 \.gitmodules
 \.gitattributes
+\.stow-local-ignore
 
 ^/README.*
 ^/LICENSE.*
-^/CHANGELOG.*
-^/CONTRIBUTING.*
 
 \.vscode
 \.idea
-\.vim
-\.nvim
 
 \.DS_Store
 
 .*\.log
-^/logs

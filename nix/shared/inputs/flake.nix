@@ -5,7 +5,6 @@
     # Common inputs
     # nixpkgs.url = "github:NixOS/nixpkgs/25.11";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -15,7 +14,6 @@
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
 
     # WSL
-    nur.url = "github:nix-community/NUR";
     nixos-wsl.url = "github:nix-community/NixOS-WSL";
     nixos-wsl.inputs.nixpkgs.follows = "nixpkgs";
     nix-index-database.url = "github:Mic92/nix-index-database";

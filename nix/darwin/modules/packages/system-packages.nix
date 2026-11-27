@@ -1,18 +1,14 @@
 # List packages installed in system profile. To search by name, run:
 # $ nix-env -qaP | grep wget  
-{ pkgs, pkgs-unstable, ... }:
+{ pkgs, ... }:
 
-let
-  shared = import ../../../shared/packages.nix { inherit pkgs pkgs-unstable; };
-in
 {
-  environment.systemPackages = 
-    shared.stablePackages ++
-    shared.unstablePackages ++
-    (with pkgs; [
+  environment.systemPackages =
+    import ../../../shared/packages.nix { inherit pkgs; }
+    ++ (with pkgs; [
       # macOS specific
       mkalias
-      
+
       # GUI applications (moved to Homebrew casks in homebrew.nix)
     ]);
 }
