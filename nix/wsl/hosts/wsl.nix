@@ -6,7 +6,7 @@
   ...
 }: {
   
-  time.timeZone = "America/Los_Angeles";
+  time.timeZone = "Europe/Budapest";
 
   networking.hostName = "${hostname}";
 
@@ -14,14 +14,46 @@
   environment.pathsToLink = ["/share/zsh"];
   environment.shells = [pkgs.zsh];
 
-  environment.enableAllTerminfo = true;
+  # enableAllTerminfo pulls termite, whose old vte is not cached and fails to build
+  # on this nixpkgs rev; Windows Terminal works with the default xterm terminfo.
+  # environment.enableAllTerminfo = true;
 
-  security.sudo.wheelNeedsPassword = false;
+  # sudo asks for the user's password; no SSH server inside WSL.
+  # Set the password once from Windows: wsl -d NixOS -u root passwd <user>
+  security.sudo.wheelNeedsPassword = true;
 
-  services.openssh.enable = true;
+  # WSL has no real console; since 26.11 getty@tty1 gets started on switch
+  # and fails (start-limit-hit), which turns every switch red.
+  systemd.services."getty@tty1".enable = false;
+  systemd.services."autovt@tty1".enable = false;
+
+  imports = [
+    ./certs.nix
+    ./nix-ld.nix
+    ./postgresql.nix
+  ];
+
+  # Local embeddings for gbrain (nomic-embed-text). Port 11435, not the
+  # default 11434: gbrain's MCP wrapper (~/.gbrain/serve-mcp.sh) points here.
+  services.ollama = {
+    enable = true;
+    host = "127.0.0.1";
+    port = 11435;
+    loadModels = [ "nomic-embed-text" ];
+  };
+
+  # JDK 17, Maven and the Java tools come from shared/packages.nix (the flake
+  # overlay gives this machine a JDK with the extra root CA). Selenium suites:
+  # WebDriverManager finds google-chrome on PATH and downloads the matching
+  # chromedriver, which runs through nix-ld.
+  environment.systemPackages = [ pkgs.google-chrome ];
+  environment.variables.JAVA_HOME = "${pkgs.temurin-bin-17}";
 
   users.users.${username} = {
     isNormalUser = true;
+    # Keep the user manager (Hermes gateway, gbrain autopilot, Hindsight
+    # backup timer) running without an open WSL session.
+    linger = true;
     shell = pkgs.zsh;
     extraGroups = [
       "wheel"
@@ -42,7 +74,8 @@
     ];
   };
 
-  system.stateVersion = "25.05";
+  # Release of the first install (NixOS-WSL 2605.7.2); do not change later.
+  system.stateVersion = "26.05";
 
   wsl = {
     enable = true;
@@ -56,7 +89,8 @@
 
   nix = {
     settings = {
-      trusted-users = [username];
+      # No trusted-users: a trusted user can get root through the Nix daemon,
+      # which would bypass the sudo password.
       # FIXME: use your access tokens from secrets.json here to be able to clone private repos on GitHub and GitLab
       # access-tokens = [
       #   "github.com=${secrets.github_token}"

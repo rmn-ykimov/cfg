@@ -14,7 +14,21 @@
     in
     with shared.inputs;
     let
-      secrets = builtins.fromJSON (builtins.readFile "${self}/secrets.json");
+      # Extra root CA, kept on the machine and not in this repo. The file
+      # lives under /etc/nixos (root-owned, so only sudo can swap the CA the
+      # whole system trusts). Reading a path outside the flake needs
+      #   sudo nixos-rebuild switch --impure --flake .#nixos
+      # Pure evaluation cannot see the file either, so a missing --impure
+      # also ends in the throw below.
+      extraCaFile = "/etc/nixos/extra-ca/root-ca.pem";
+      extraCa =
+        if builtins.pathExists extraCaFile then
+          builtins.path {
+            path = extraCaFile;
+            name = "extra-root-ca.pem";
+          }
+        else
+          throw "extra root CA not readable at ${extraCaFile}: rebuild with --impure, and put the PEM there (sudo) if it is missing";
 
       nixpkgsWithOverlays =
         system:
@@ -30,6 +44,18 @@
 
           overlays = [
             nur.overlays.default
+
+            # The JDK from shared/packages.nix, rebuilt with this machine's
+            # extra root CA: nixpkgs JDKs build their cacerts keystore from
+            # pkgs.cacert, not from the system bundle. Maven in the shared
+            # list is pinned to the same attribute, so it gets this one too.
+            (final: prev: {
+              temurin-bin-17 = prev.temurin-bin-17.override {
+                cacert = prev.cacert.override {
+                  extraCertificateFiles = [ extraCa ];
+                };
+              };
+            })
           ];
         });
 
@@ -41,7 +67,7 @@
       };
 
       argDefaults = {
-        inherit secrets self nix-index-database;
+        inherit self nix-index-database extraCa;
         inputs = shared.inputs;
         channels = {
           inherit nixpkgs;

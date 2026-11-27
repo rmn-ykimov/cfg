@@ -21,7 +21,7 @@ in {
     ../shared/programs/zoxide.nix
   ];
 
-  home.stateVersion = "25.05";
+  home.stateVersion = "26.05";
 
   home = {
     username = "${username}";
@@ -29,6 +29,10 @@ in {
 
     sessionVariables.EDITOR = "nvim";
     sessionVariables.SHELL = "/etc/profiles/per-user/${username}/bin/zsh";
+
+    # Hermes installer puts its launcher here; ~/.zshrc is read-only
+    # (managed by Home Manager), so the installer cannot add it itself.
+    sessionPath = [ "$HOME/.local/bin" ];
   };
 
   home.packages =
@@ -40,6 +44,14 @@ in {
   programs = {
 
     home-manager.enable = true;
+
+    # Claude subscription token for Hermes / Hindsight / gbrain on this box
+    # (file is mode 600, created by hand, never in the repo or Nix store).
+    zsh.envExtra = ''
+      if [ -r "$HOME/.config/claude/oauth-token.env" ]; then
+        set -a; . "$HOME/.config/claude/oauth-token.env"; set +a
+      fi
+    '';
     
     nix-index.enable = true;
     nix-index.enableZshIntegration = true;

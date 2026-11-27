@@ -3,6 +3,10 @@ return {
 	"obsidian-nvim/obsidian.nvim",
 	version = "*", -- recommended, use latest release instead of latest commit
 	lazy = false,
+	-- Load only where the vault exists (skipped on the work WSL box).
+	cond = function()
+		return vim.fn.isdirectory(vim.fn.expand("~/Zettel")) == 1
+	end,
 	-- ft = "markdown",
 	--
 	-- Replace the above line with this if you only want to load obsidian.nvim

@@ -47,7 +47,8 @@
     ffmpeg
     postgresql
     docker-compose
-    djvu2pdf
+    # djvu2pdf was removed from nixpkgs (unmaintained); ddjvu -format=pdf does the same
+    djvulibre
     #blender
   ];
 
@@ -88,9 +89,12 @@
     nodejs_24
 
     ### Java
-    #jdk21_headless
-    #jdt-language-server
-    #google-java-format
+    temurin-bin-17
+    (maven.override { jdk_headless = temurin-bin-17; })
+    jdt-language-server
+    # Run it on the same JDK 25 jdt-language-server uses instead of pulling
+    # a separate ~0.9 GB JDK 21.
+    (google-java-format.override { jre = jdk25; })
 
     ### Rust
     rustc
